@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.hide {
+    display: none;
+}
+
+form {
+    display: inline;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+a:hover {
+    color: blue;
+}
+
+.blog,
+.form {
+    margin: 1rem 10%;
+    text-align: justify;
+}
+
+.title,
+.datetime,
+.edited,
+.content,
+.form form input,
+.form form label,
+textarea {
+    margin-bottom: 0.5rem;
+}
+
+button,
+input[type="submit"] {
+    font-size: 1rem;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.form input,
+textarea {
+    border: solid;
+}
+
+.form form * {
+    display: block;
+}
+
+.form form input[type="submit"] {
+    display: inline;
+    width: min-content;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+}
+
+textarea {
+    height: 250px;
+}
+
+input[name="content"] {
+    min-height: 100px;
+    height: fit-content;
+}

@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<% for (let i = blogs.length - 1; i >= 0; i--) { %>
+<!-- Blog -->
+<div class="blog">
+  <!-- Title -->
+  <h2 class="title"><%= blogs[i].title %></h2>
+  <!-- Date & Time -->
+  <p class="datetime"><%= blogs[i].date %> <%= blogs[i].time %></p>
+  <% if (blogs[i].edited) { %>
+  <!-- Edited Info -->
+  <p class="edited">Edited at <%= blogs[i].editDate %> <%= blogs[i].editTime %></p>
+  <% } %>
+  <!-- Content -->
+  <p class="content"><%= blogs[i].content %></p>
+  <!-- Delete & Edit Feature -->
+  <div>
+    <!-- Delete Button -->
+    <button class="toggle">Delete</button>
+    <!-- Confirmation of Deletion-->
+    <div class="hide">
+      <p>Are you sure?</p>
+      <form action="/delete" method="POST">
+        <input class="hidden" type="text" name="index" value="<%= i %>" />
+        <input type="submit" value="Yes" />
+      </form>
+      <button class="cancel">No</button>
+    </div>
+    <!-- Edit Button -->
+    <form action="/toedit" method="POST">
+      <input class="hidden" type="text" name="index" value="<%= i %>" />
+      <input type="submit" value="Edit" />
+    </form>
+  </div>
+</div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>
